@@ -1,0 +1,10 @@
+.env
+venv
+__pycache__/
+.pytest_cache/
+db.sqlite3
+blog/blog/__pycache__/
+blog/blog/settings/__pycache__/
+blog/blog/__pycache__/
+blog/blog/tests/__pycache__/
+*.pyc 
