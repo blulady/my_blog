@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lugrasimo&display=swap');
+
+.logo {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.other {
+    font-family: "Lugrasimo", cursive;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  html, body {
+    font-family: "Dancing Script", cursive;
+  }
+
+ 
+.infscroll h1 {
+    font-size: 22px;
+    letter-spacing: -0.6px;
+}
+
+@media only screen and (max-width: 768px) {
+    .infscroll h1 {
+        font-size: 15px;
+        letter-spacing: -0.0px;
+    }
+
+}
