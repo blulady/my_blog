@@ -15,12 +15,11 @@
                 <div class="card pb-3 pb-sm-5 border-0">
                     <div class="row">
                         <div class="col-8">
-                            <div class="card-body p-0">
-                                <div class="pb-2 text-body ">{{post.author}}</div>
+                            <a href="{% url 'post-detail' post.slug %}" class="text-decoration-none card-body p-0">
                                 <h1 class="mb-1 text-body fw-bold">{{post.title|truncatechars:80}}</h1>
                                 <h4 class="text-muted fs-6 d-none d-md-block">{{post.subtitle}}</h2>
-                                <div class="text-muted">{{post.updated_at|date:"M d"}}</div>
-                            </div>
+                                <div class="text-muted">{{post.updated_at|date:"M d y"}}</div>
+                            </a>
                             </div>
                         <div class="col-4"><img src="https://picsum.photos/205/115" class="img-fluid float-end"></div>
                     </div>
@@ -29,7 +28,7 @@
             
             {% endfor %}
         </div>
-        <div class="d-none d-lg-block col-4">a</div>
+        <div class="d-none d-lg-block col-4"></div>
     </div>
 </div>
 

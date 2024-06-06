@@ -1,7 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Post(models.Model):
+    class NewManager(models.Manager):
+        def get_queryset(self):
+            return super().get_queryset().filter(status='published')
 
     options = (
         ("draft", "Draft"),
@@ -15,6 +19,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=options, default="draft")
+    objects = models.Manager()
+    newmanager = NewManager()
 
     class Meta: 
         ordering = ["-created_at"]

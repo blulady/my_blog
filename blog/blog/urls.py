@@ -22,4 +22,5 @@ from blog.blog_app import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.HomeView.as_view(), name="home"),
+    path('post/<slug:slug>', views.PostDetailView.as_view(), name='post-detail'),
 ]
