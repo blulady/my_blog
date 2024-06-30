@@ -1,3 +1,4 @@
+import dj_database_url
 from .base import *
 
 
@@ -6,3 +7,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+DATABASES['default'] = dj_database_url.config(
+    conn_max_age=500,
+    conn_health_checks=True,
+)
