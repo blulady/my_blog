@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-Debug = False
+DEBUG = False
 # from blog.settings.base import DEBUG
 
 
