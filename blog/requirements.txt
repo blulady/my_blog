@@ -2,11 +2,14 @@ asgiref==3.8.1
 black==24.4.0
 click==8.1.7
 coverage==7.4.4
+dj-database-url==2.2.0
 Django==5.0.4
+django-htmx==1.17.3
 exceptiongroup==1.2.1
 factory-boy==3.3.0
 Faker==24.11.0
 flake8==7.0.0
+gunicorn==22.0.0
 inflection==0.5.1
 iniconfig==2.0.0
 mccabe==0.7.0
