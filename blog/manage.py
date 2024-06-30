@@ -9,6 +9,7 @@ def main():
     """Run administrative tasks."""
     if DEBUG:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings.local')
+        print('running from Debug')
     else:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings.production')
     try:
