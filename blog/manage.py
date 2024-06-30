@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+Debug = False
 # from blog.settings.base import DEBUG
 
 
@@ -24,11 +25,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    try:
-        from blog.settings.local import DEBUG
-    except ImportError:
-        DEBUG = False
-        
+    # try:
+    #     # from blog.settings.local import DEBUG
+    # except ImportError:
+    #     DEBUG = False
+
     if DEBUG:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings.local')
         print('running from Debug')
