@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-DEBUG = False
+DEBUG = os.environ.get("DEBUG")
 # from blog.settings.base import DEBUG
 
 

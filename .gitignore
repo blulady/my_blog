@@ -10,3 +10,4 @@ blog/blog/tests/__pycache__/
 *.pyc 
 htmlcov/
 .coverage
+.idea/
