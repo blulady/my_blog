@@ -19,7 +19,7 @@ STATICFILES_DIRS = [
 # }
 
 DATABASES['default'] = dj_database_url.config(
-    default = os.environ.get('DATABASE_URL'),
+    default=os.environ.get('DATABASE_URL'),
     conn_max_age=500,
     conn_health_checks=True,
 )
