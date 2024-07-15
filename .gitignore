@@ -5,9 +5,9 @@ __pycache__/
 db.sqlite3
 blog/blog/__pycache__/
 blog/blog/settings/__pycache__/
-blog/blog/__pycache__/
 blog/blog/tests/__pycache__/
 *.pyc 
 htmlcov/
 .coverage
 .idea/
+importantDetailsREADME.txt
