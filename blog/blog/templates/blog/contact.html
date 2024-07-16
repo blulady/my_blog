@@ -1,0 +1,47 @@
+{% extends "../base/base.html" %}
+{% block title %}
+    About Sarah
+{% endblock %}
+{% block template %}
+{% include "../base/navbar.html" %}
+<div class="mt-md-5">
+    <div class="border-top border-2 border-dark w-100 position-relative" style="top: 50px;"></div>
+        <div class="container py-5 mt-md-5">
+            <div class="row mt-md-5 justify-content-center">
+                <div class="col-12 col-md-6 py-1 py-md-5 text-center text-md-start">
+                    <form class="" method="POST" action="ContactForm">
+                        <h1 class="display-1">Contact Me:</h1>
+                        {{ form }}
+                        <div class="form-group col-md-6">
+                            <label for="name">Name:</label>
+                            <input name="name" type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                        </div>
+                        <br>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email:</label>
+                            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <br>
+                        <div class="form-group col-md-6">
+                            <label for="phone">Phone:</label>
+                            <input name="phone" type="text" class="form-control" id="phone" aria-describedby="phoneHelp">
+                            <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="FormControlTextarea">Message:</label>
+                            <textarea name="message" class="form-control" id="FormControlTextarea" rows="4"></textarea>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="text-end">
+                <button type="submit" class="btn btn-dark btn-lg">
+                               <a href="{% url 'contact' %}" style="text-decoration:none; color: white"> Submit </a></button>
+                             </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
