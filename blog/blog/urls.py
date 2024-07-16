@@ -23,5 +23,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.HomeView.as_view(), name="home"),
     path('post/<slug:slug>', views.PostDetailView.as_view(), name='post-detail'),
-    path("about_me", views.AboutMeView.as_view(), name='about')
+    path("about", views.about_me, name='about')
 ]

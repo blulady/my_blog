@@ -1,8 +1,41 @@
 {% extends "../base/base.html" %}
 {% block title %}
-    Sarah's Blog
+    About Sarah
 {% endblock %}
 {% block template %}
 {% include "../base/navbar.html" %}
+<div class="mt-md-5">
+    <div class="border-top border-2 border-dark w-100 position-relative" style="top: 50px;"></div>
+        <div class="container py-5 mt-md-5">
+            <div class="row mt-md-5 justify-content-center">
+                <div class="col-12 col-md-8 py-1 py-md-3 text-center text-md-start">
+                    <div class="text-center">
+                        {% load static %}
+                        <img src="/static/img/wood_elf.jpeg" alt="wood elf">
+                        <h1 class="display-1">About Sarah</h1>
+                        <h2 class="fs-4 lh-1 text-muted fw-bolder pb-4">A Developer's Tale</h2>
+                        <h3>“No dragon can resist the fascination of riddling talk and of wasting time trying to understand it.”  </h3>
+                        <div class="text-muted"> - J. R. R. Tolkien</div>
+                        <br><br>
+                        <div class="text-center">
+                        <h4>Until 2020 I was a business owner who started growing my acupuncture practice shortly after graduating from my master's program.
+                            I ran my own marketing, utilizing Google AdWords and Google Analytics. I maintained my own website updating design elements and content.
+                            I also integrated my electronic health records service into my website so people could submit their insurance for verification after
+                            I taught myself medical billing. When the pandemic hit, I had health concerns because of underlying conditions and my response to catching
+                            covid was not great. So I went back to what I had wanted to do before attending my master's program, which was work with computers. So now
+                            I am a software developer who loves learning and making magic. Logic has a plethora of applications and this is an expressive one.  I am experienced with HTML, CSS, JavaScript, SQL, and Python.
+                            I would love to make magic for your projects.</h4>
+                            <br>
+
+                            <button type="button" class="btn btn-dark">Contact Me</button>
+                             </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {%endblock %}
