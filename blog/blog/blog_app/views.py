@@ -34,11 +34,13 @@ def contact(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         subject = request.POST.get('subject')
+        phone = request.POST.get('phone')
         message = request.POST.get('message')
 
         data = {
             'name': name,
             'email': email,
+            'phone': phone,
             'subject': subject,
             'message': message
         }
@@ -47,8 +49,8 @@ def contact(request):
         Subject: {}
         New message: {}
         
-        From: {} At Email {}
-        """.format(data['subject'], data['message'], data['name'], data['email'])
+        From: {} At Email {} At Phone {}
+        """.format(data['subject'], data['message'], data['name'], data['email'], data['phone'])
         send_mail(data['subject'], message,'', ["ssanger2020@gmail.com"], fail_silently=False )
         return HttpResponseRedirect("/success")
     return render(request, 'blog/contact.html', {})
