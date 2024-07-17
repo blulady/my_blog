@@ -44,10 +44,11 @@ def contact(request):
         }
 
         message = """
+        Subject: {}
         New message: {}
         
-        From: {}
-        """.format(data['message'], data['email'])
+        From: {} At Email {}
+        """.format(data['subject'], data['message'], data['name'], data['email'])
         send_mail(data['subject'], message,'', ["ssanger2020@gmail.com"], fail_silently=False )
         return HttpResponseRedirect("/success")
     return render(request, 'blog/contact.html', {})
