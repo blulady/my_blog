@@ -1,6 +1,6 @@
 {% extends "../base/base.html" %}
 {% block title %}
-    About Sarah
+    Contact Sarah
 {% endblock %}
 {% block template %}
 {% include "../base/navbar.html" %}
@@ -9,38 +9,35 @@
         <div class="container py-5 mt-md-5">
             <div class="row mt-md-5 justify-content-center">
                 <div class="col-12 col-md-6 py-1 py-md-5 text-center text-md-start">
-                    <form class="" method="POST" action="ContactForm">
-                        <h1 class="display-1">Contact Me:</h1>
-                        {{ form }}
+                     <h2 class="display-1">Contact Me:</h2>
+                    <br>
+                    <form action="" method="post" class="contact-form">
+                        {% csrf_token %}
                         <div class="form-group col-md-6">
                             <label for="name">Name:</label>
-                            <input name="name" type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                            <input id="name" type="text" name="name" class="form-control">
                         </div>
                         <br>
                         <div class="form-group col-md-6">
                             <label for="email">Email:</label>
-                            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <input id="email" type="email" name="email" class="form-control">
                         </div>
                         <br>
                         <div class="form-group col-md-6">
                             <label for="phone">Phone:</label>
-                            <input name="phone" type="text" class="form-control" id="phone" aria-describedby="phoneHelp">
-                            <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+                            <input id="phone" type="text" name="phone" class="form-control">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="FormControlTextarea">Message:</label>
-                            <textarea name="message" class="form-control" id="FormControlTextarea" rows="4"></textarea>
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" class="form-control"></textarea>
+                       </div>
+                        <br>
+                        <div class="text-center">
+                            <input type="submit" value="submit" class="btn btn-dark btn-lg">
                         </div>
-
                     </form>
-
                 </div>
-                <div class="text-end">
-                <button type="submit" class="btn btn-dark btn-lg">
-                               <a href="{% url 'contact' %}" style="text-decoration:none; color: white"> Submit </a></button>
-                             </div>
             </div>
         </div>
 </div>
