@@ -7,7 +7,6 @@ from blog.settings import base
 
 def main():
     """Run administrative tasks."""
-
     if base.DEBUG:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings.local')
     else:
