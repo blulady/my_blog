@@ -51,7 +51,7 @@ def contact(request):
         
         From: {} At Email {} At Phone {}
         """.format(data['subject'], data['message'], data['name'], data['email'], data['phone'])
-        send_mail(data['subject'], message,'', ["ssanger2020@gmail.com"], fail_silently=False )
+        send_mail(data['subject'], message, 'mailtrap@demomailtrap.com', ["ssanger2020@gmail.com"], fail_silently=False )
         return HttpResponseRedirect("/success")
     return render(request, 'blog/contact.html', {})
 
