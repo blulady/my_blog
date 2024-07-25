@@ -22,6 +22,3 @@ DATABASES['default'] = dj_database_url.config(
     conn_health_checks=True,
 )
 
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'sarahsblog.up.railway.app']
-# CSRF_TRUSTED_ORIGINS = ['https://sarahsblog.up.railway.app'] https://sarahsblog.up.railway.app/
-

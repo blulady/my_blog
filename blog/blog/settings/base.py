@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-
+import dj_database_url
 
 import os
 
@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == 'True'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "sarahsblog.up.railway.app"]
 CSRF_TRUSTED_ORIGINS = ["https://sarahsblog.up.railway.app"]
 
 # Application definition
@@ -89,6 +89,13 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(
+    default=os.environ.get('DATABASE_URL'),
+    conn_max_age=500,
+    conn_health_checks=True,
+)
+
+print(f"Using DATABASE_URL: {os.environ.get('DATABASE_URL')}")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
