@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-import dj_database_url
-
 import os
 
 
@@ -89,11 +87,6 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(
-    default=os.environ.get('DATABASE_URL'),
-    conn_max_age=500,
-    conn_health_checks=True,
-)
 
 print(f"Using DATABASE_URL: {os.environ.get('DATABASE_URL')}")
 
