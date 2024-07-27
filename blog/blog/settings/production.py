@@ -1,5 +1,8 @@
 import dj_database_url
 from .base import *
+import cloudinary
+import cloudinary.api
+
 
 
 STATIC_URL = "/static/"
@@ -22,3 +25,8 @@ DATABASES['default'] = dj_database_url.config(
     conn_health_checks=True,
 )
 
+cloudinary.config(
+    cloudname=os.environ.get('CLOUDNAME'),
+    api_key=os.environ.get('APIKEY'),
+    api_secret=os.environ.get('APISECRET')
+)
