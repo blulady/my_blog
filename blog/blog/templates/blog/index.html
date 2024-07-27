@@ -17,11 +17,11 @@
                         <div class="col-8">
                             <a href="{% url 'post-detail' post.slug %}" class="text-decoration-none card-body p-0">
                                 <h1 class="mb-1 text-body fw-bold">{{post.title|truncatechars:80}}</h1>
-                                <h4 class="text-muted fs-6 d-none d-md-block">{{post.subtitle}}</h2>
+                                <h2 class="text-muted fs-6 d-none d-md-block">{{post.subtitle}}</h2>
                                 <div class="text-muted">{{post.updated_at|date:"M d y"}}</div>
                             </a>
                             </div>
-                        <div class="col-4"><img src="https://picsum.photos/205/115" class="img-fluid float-end"></div>
+                        <div class="col-4"><img src="{{post.img}}" class="img-fluid float-end"></div>
                     </div>
                 </div>
             </a>

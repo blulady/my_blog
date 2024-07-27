@@ -88,8 +88,6 @@ DATABASES = {
 }
 
 
-print(f"Using DATABASE_URL: {os.environ.get('DATABASE_URL')}")
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -127,6 +125,9 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
