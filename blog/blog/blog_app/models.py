@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
+
 
 class Post(models.Model):
     class NewManager(models.Manager):
@@ -16,7 +18,8 @@ class Post(models.Model):
     content = models.TextField()
     slug = models.SlugField(max_length=255, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_author")
-    img = models.ImageField(upload_to='images/', default='images/coming_soon.jpg')
+    # img = models.ImageField(upload_to='images/', default='images/coming_soon.jpg')
+    img = CloudinaryField('image')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=options, default="draft")

@@ -1,4 +1,5 @@
 from django import forms
+from cloudinary.forms import CloudinaryFileField
 
 
 class ContactForm(forms.Form):
@@ -7,4 +8,5 @@ class ContactForm(forms.Form):
     phone = forms.CharField(max_length=11)
     subject = forms.CharField(max_length=250)
     message = forms.CharField(widget=forms.Textarea)
-    img = forms.ImageField(widget=forms.ClearableFileInput)
+
+

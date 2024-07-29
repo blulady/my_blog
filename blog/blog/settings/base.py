@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog.blog_app",
-    "django_htmx"
+    "django_htmx",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -126,8 +127,18 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# using cloudinary
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config(
+    cloudname=os.environ.get('CLOUDNAME'),
+    api_key=os.environ.get('APIKEY'),
+    api_secret=os.environ.get('APISECRET')
+)
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
