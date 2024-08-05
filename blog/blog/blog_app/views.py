@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.views.generic import ListView, DetailView
 from .models import Post
+from .forms import PostForm
 
 from .forms import ContactForm
 
@@ -18,10 +19,10 @@ class HomeView(ListView):
 
 
 class PostDetailView(DetailView):
-    model = Post
-    template_name = "blog/post_detail.html"
-    context_object_name = "post"
-    slug_url_kwarg = 'slug'
+        model = Post
+        template_name = "blog/post_detail.html"
+        context_object_name = "post"
+        slug_url_kwarg = 'slug'
 
 
 def about_me(request):
@@ -55,17 +56,19 @@ def contact(request):
         return HttpResponseRedirect("/success")
     return render(request, 'blog/contact.html', {})
 
-# def contact(request):
-#     if request.method == "POST":
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             print(form)
-#             return HttpResponseRedirect("/success")
-#     else:
-#         form = ContactForm()
-#     return render(request, 'blog/contact.html', {"form": form})
-
 
 def success(request):
     template = loader.get_template("blog/email_submission_success.html")
     return HttpResponse(template.render())
+
+
+def post_create_view(request):
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("success")
+    else:
+        form = PostForm()
+    return render(request, 'blog/post_create.html', {'form': form})
+
