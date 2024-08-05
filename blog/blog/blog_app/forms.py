@@ -13,9 +13,19 @@ class ContactForm(forms.Form):
 
 
 class PostForm(forms.ModelForm):
+    img = CloudinaryFileField()
+
     class Meta:
         model = Post
         fields = ['title', 'subtitle', 'content', 'slug', 'author', 'img', 'status']
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['img'].options={
+                'tags': 'new_image',
+                'format': 'png'
+            }
+
         widgets = {
             'img': forms.ClearableFileInput(attrs={'class': 'form-control'}),
             "status": forms.Select(choices=Post.options, attrs={'class': 'form-control'}),

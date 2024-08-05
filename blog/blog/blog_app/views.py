@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
@@ -62,6 +63,7 @@ def success(request):
     return HttpResponse(template.render())
 
 
+@login_required
 def post_create_view(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)

@@ -21,7 +21,9 @@
                                 <div class="text-muted">{{post.updated_at|date:"M d y"}}</div>
                             </a>
                             </div>
-                        <div class="col-4"><img src="{{ post.img.url }}" class="img-fluid float-end"></div>
+                        {% load cloudinary %}
+                        <div class="col-4">{% cloudinary post.img quality='auto' width=200 height=100 %}</div>
+<!--                        <div class="col-4"><img src="{{ post.img.url }}" class="img-fluid float-end"></div>-->
                     </div>
                 </div>
             </a>
