@@ -22,8 +22,7 @@
                             </a>
                             </div>
                         {% load cloudinary %}
-                        <div class="col-4">{% cloudinary post.img quality='auto' width=200 height=100 %}</div>
-<!--                        <div class="col-4"><img src="{{ post.img.url }}" class="img-fluid float-end"></div>-->
+                        <div class="col-4">{% cloudinary post.img quality='auto' width=450 height=300 crop='pad' background='gen_fill:ignore-foreground_true' %}</div>
                     </div>
                 </div>
             </a>
