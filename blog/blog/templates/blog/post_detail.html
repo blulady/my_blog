@@ -7,18 +7,21 @@
 
 <div class="mt-md-5">
     <div class="border-top border-2 border-dark w-100 position-relative" style="top: 50px;"></div> 
-        <div class="container py-5 mt-md-5">
-            <div class="row mt-md-5 justify-content-center">
+        <div class="container py-5 md-5">
+            <div class="row md-5 justify-content-center">
                 <div class="col-12 col-md-6 py-1 py-md-5 text-center text-md-start">
-                    <h1 class="display-1">{{post.title}}</h1>
-                    <h2 class="fs-4 lh-1 text-muted fw-bolder pb-4">{{ post.subtitle }}</h2>
-                    <h3>By Sarah Sanger</h3>
-                    <div class="text-muted">{{post.updated_at|date:"M d y"}}</div>
-                    <h4>{{ post.content }}</h4>
+                    <h1 class="display-1 text-center">{{post.title}}</h1>
+                    <h2 class="fs-4 lh-1 text-center text-muted fw-bolder pb-4">{{ post.subtitle }}</h2>
+                    <h3 class="text-center">By Sarah Sanger</h3>
+                    <div class="text-muted text-center">{{post.updated_at|date:"M d y"}}</div>
                 </div>
+                <div class="col-12 col-md-6 py-1 py-md-5 align-items-center justify-content-center">
+                    {% load cloudinary %}
+                    <div class="">{% cloudinary post.img quality='auto' width=450 height=300 crop='pad' background='gen_fill:ignore-foreground_true' %}</div>
+                </div>
+                <h4 class="mt-5">{{ post.content }}</h4>
             </div>
         </div>
-    </div>
 </div>
 
 
