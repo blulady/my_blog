@@ -19,7 +19,7 @@
                     {% load cloudinary %}
                     <div class="">{% cloudinary post.img quality='auto' width=450 height=300 crop='pad' background='gen_fill:ignore-foreground_true' %}</div>
                 </div>
-                <h4 class="mt-5">{{ post.content|linebreaks }}</h4>
+                <h4 class="mt-5" style="font-family: 'Lugrasimo', cursive;">{{ post.content|safe|linebreaks }}</h4>
             </div>
         </div>
 </div>
